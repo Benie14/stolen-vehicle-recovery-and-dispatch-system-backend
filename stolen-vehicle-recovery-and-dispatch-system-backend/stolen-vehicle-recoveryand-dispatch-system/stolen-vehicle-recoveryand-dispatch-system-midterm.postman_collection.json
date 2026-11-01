@@ -1,0 +1,792 @@
+{
+  "info": {
+    "_postman_id": "stolen-vehicle-recoveryand-dispatch-system-midterm",
+    "name": "Stolen Vehicle Recovery and Dispatch System Midterm",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "A2 - Save capability",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/capabilities/save",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "capabilities",
+            "save"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Roadblock\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "A2 - Save sector",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/sectors/save",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "sectors",
+            "save"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"sectorNumber\": 1,\n  \"name\": \"Kimironko\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "A2 - Save patrol unit",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/patrol-units/save",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "patrol-units",
+            "save"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"unitName\": \"Patrol Alpha\",\n  \"commanderName\": \"Officer A\",\n  \"radioCode\": \"PA-01\",\n  \"sector\": {\n    \"id\": \"{{sectorId}}\"\n  },\n  \"capabilities\": []\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "A2 - Save vehicle",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/vehicles/save",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "vehicles",
+            "save"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"make\": \"Toyota\",\n  \"model\": \"RAV4\",\n  \"plateNumber\": \"RAC 789 D\",\n  \"vin\": \"VIN-0001\",\n  \"ownerName\": \"Sample Owner\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "D1 - Save incident case",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/incident-cases/save",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "incident-cases",
+            "save"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"reportDate\": \"2026-10-28\",\n  \"status\": \"WITHDRAWN\",\n  \"lastKnownLocation\": \"Kigali\",\n  \"vehicle\": {\n    \"id\": \"{{vehicleId}}\"\n  },\n  \"patrolUnit\": {\n    \"id\": \"{{patrolUnitId}}\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "A2 - List capabilities",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/capabilities/all",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "capabilities",
+            "all"
+          ]
+        }
+      }
+    },
+    {
+      "name": "A2 - List sectors",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/sectors/all",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "sectors",
+            "all"
+          ]
+        }
+      }
+    },
+    {
+      "name": "A2 - List patrol units",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/patrol-units/all",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "patrol-units",
+            "all"
+          ]
+        }
+      }
+    },
+    {
+      "name": "A2 - List vehicles",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/vehicles/all",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "vehicles",
+            "all"
+          ]
+        }
+      }
+    },
+    {
+      "name": "A2 - List incident cases",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/incident-cases/all",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "incident-cases",
+            "all"
+          ]
+        }
+      }
+    },
+    {
+      "name": "B1 - Vehicle by make",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/vehicles/by-make",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "vehicles",
+            "by-make"
+          ],
+          "query": [
+            {
+              "key": "make",
+              "value": "toyota"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "B2 - Cases by status",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/incident-cases/by-status",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "incident-cases",
+            "by-status"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "REPORTED"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "B3 - Cases between dates",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/incident-cases/between",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "incident-cases",
+            "between"
+          ],
+          "query": [
+            {
+              "key": "start",
+              "value": "2026-10-01"
+            },
+            {
+              "key": "end",
+              "value": "2026-10-31"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "C1 - Patrol units by capability",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/patrol-units/by-capability",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "patrol-units",
+            "by-capability"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "pursuit"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "C2 - Free sectors",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/sectors/free",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "sectors",
+            "free"
+          ]
+        }
+      }
+    },
+    {
+      "name": "C3 - Unused capabilities",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/capabilities/unused",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "capabilities",
+            "unused"
+          ]
+        }
+      }
+    },
+    {
+      "name": "C4 - Vehicles of patrol unit",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/vehicles/of-patrol-unit/{{patrolUnitId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "vehicles",
+            "of-patrol-unit",
+            "{{patrolUnitId}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "D2 - Change case status",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/incident-cases/{{incidentCaseId}}/status",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "incident-cases",
+            "{{incidentCaseId}}",
+            "status"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "DISPATCHED"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "D3 - Add capability to patrol unit",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/patrol-units/{{patrolUnitId}}/capabilities/{{capabilityId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "patrol-units",
+            "{{patrolUnitId}}",
+            "capabilities",
+            "{{capabilityId}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "D4 - Move patrol unit to sector",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/patrol-units/{{patrolUnitId}}/sector",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "patrol-units",
+            "{{patrolUnitId}}",
+            "sector"
+          ],
+          "query": [
+            {
+              "key": "sectorNumber",
+              "value": "4"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "E1 - Save recovery record",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/recovery-records/save",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "recovery-records",
+            "save"
+          ],
+          "query": [
+            {
+              "key": "incidentCaseId",
+              "value": "{{incidentCaseId}}"
+            }
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"locationFound\": \"Nyabugogo\",\n  \"remarks\": \"Minor damage to bumper\",\n  \"distanceKm\": 12\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "E2 - Recovery history by vehicle plate",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/recovery-records/vehicle/RAC%20789%20D",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "recovery-records",
+            "vehicle",
+            "RAC%20789%20D"
+          ]
+        }
+      }
+    },
+    {
+      "name": "E3 - Delete recovery record",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/recovery-records/delete/{{recoveryRecordId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "recovery-records",
+            "delete",
+            "{{recoveryRecordId}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "F1 - Cases grouped by status",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/incident-cases/stats/by-status",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "incident-cases",
+            "stats",
+            "by-status"
+          ]
+        }
+      }
+    },
+    {
+      "name": "F2 - Cancel patrol unit day",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/incident-cases/cancel-day",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "incident-cases",
+            "cancel-day"
+          ],
+          "query": [
+            {
+              "key": "patrolUnitId",
+              "value": "{{patrolUnitId}}"
+            },
+            {
+              "key": "date",
+              "value": "2026-10-20"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Bonus - Dashboard summary",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/dashboard/summary",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "dashboard",
+            "summary"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Bonus - Page incident cases",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/incident-cases/page",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "incident-cases",
+            "page"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "0"
+            },
+            {
+              "key": "size",
+              "value": "5"
+            },
+            {
+              "key": "sort",
+              "value": "reportDate,desc"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    },
+    {
+      "key": "vehicleId",
+      "value": ""
+    },
+    {
+      "key": "patrolUnitId",
+      "value": ""
+    },
+    {
+      "key": "capabilityId",
+      "value": ""
+    },
+    {
+      "key": "incidentCaseId",
+      "value": ""
+    },
+    {
+      "key": "recoveryRecordId",
+      "value": ""
+    },
+    {
+      "key": "sectorId",
+      "value": ""
+    }
+  ]
+}
